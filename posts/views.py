@@ -6,7 +6,7 @@ from django.views.generic import (
     DeleteView,
     UpdateView
 )
-from django.urls import reverse
+from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Post
 
@@ -35,4 +35,4 @@ class PostUpdateView(UpdateView):
 class PostDeleteView(DeleteView):
     template_name = "posts/delete.html"
     model = Post
-    success_url = reverse("list")
+    success_url = reverse_lazy("list")
